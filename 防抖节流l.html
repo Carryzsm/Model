@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body>
+	<button id="btn">按钮</button>
+	<script>
+		// 防抖：
+		/* let btn = document.getElementById('btn')
+		// console.log(btn);
+		btn.onclick = debounce(function(){
+			console.log('点击了一次按钮');
+		},1000)
+
+		function debounce(fn,delay){
+			let Timer;
+			return function(){
+				clearTimeout(Timer)
+				Timer = setTimeout(fn,delay)
+			}
+		} */
+
+		// 节流
+		let btn = document.getElementById('btn')
+		btn.onclick = throttle(function () {
+			console.log('点击了按钮', new Date().getSeconds())
+		}, 1000)
+		function throttle(fn, delay) {
+			let flag = false
+			return function () {
+				if (flag) {
+					return
+				}
+				setTimeout(() => {
+					fn()
+					flag = false
+				}, delay)
+				flag = true
+			}
+
+		}
+
+	</script>
+</body>
+
+</html>
