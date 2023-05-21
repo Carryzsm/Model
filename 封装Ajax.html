@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			// function ajax(url) {
+			// 	return new Promise((resolve, reject) => {
+
+			// 		const xhr = new XMLHttpRequest();
+
+			// 		xhr.open("POST", "", true);
+
+			// 		xhr.onreadystatechange = function() {
+			// 			if(xhr.readyState !== 4){
+			// 				return
+			// 			}
+			// 			if(xhr.status >= 200 && xhr.status<300){
+			// 				resolve(JSON.parse(xhr.responseText))
+			// 			}else{  // 请求失败
+			// 				reject(new Error('requst error staus' + requset.status))
+			// 			}
+			// 		}
+   //                  xhr.send()
+			// 	})
+			// }
+			
+			// function ajax(url){
+			// 	return new Promise((resolve,reject)=>{
+			// 		// 创建XHR对象
+			// 		const xhr = new XMLHttpRequest()
+			// 		// 初始化异步请求
+			// 		xhr.open('GET',url,true)
+			// 		// 绑定状态改变的监听
+			// 		xhr.onreadystatechange = function (){
+			// 			if(xhr.readyState !== 4){
+			// 				return
+			// 			}
+			// 			if(xhr.status >= 200 && xhr.status < 300){
+			// 				resolve(JSON.parse(xhr.responseText))
+			// 			}else{
+			// 				reject(new Error('requset error status' + xhr.status))
+			// 			}
+			// 		}
+			// 		xhr.send()
+			// 	})
+			// }
+			
+			// function ajax(url){
+			// 	return new Promise((resolve,reject)=>{
+			// 		const xhr = new XMLHttpRequest()
+			// 		xhr.open('GET',url,true)
+			// 		xhr.onreadystatechange = function(){
+			// 			if(xhr.readyState !== 4){
+			// 				return
+			// 			}
+			// 			if(xhr.status >= 200 && xhr.status <300){
+			// 				// 请求成功
+			// 				resolve(JSON.parse(xhr.responseText))
+			// 			}else{
+			// 				//请求失败
+			// 				reject(new Error('失败状态码' + xhr.status))
+			// 			}
+			// 		}
+			// 		xhr.send()
+			// 	})
+			// }
+			
+			/* function ajax(url){
+				return new Promise((resolve,reject)=>{
+					const xhr = new XMLHttpRequest()
+					xhr.open('GET',url,true)
+					xhr.onreadystatechange = function(){
+						if(xhr.readyState !== 4){
+							return
+						}
+						if(xhr.status >= 200 && xhr.status < 300){
+							resolve(xhr.responseText)
+						}else{
+							reject(new Error('失败状态码'+ xhr.status))
+						}
+					}
+				})
+			} */
+			
+			function ajax(url){
+				return new Promise((resolve,reject)=>{
+					const xhr = new XMLHttpRequest()
+					xhr.open('GET',url,true)
+					xhr.onreadystatechange = function(){
+						if(xhr.readyState !== 4){
+							return
+						}
+						if(xhr.status >= 200 && xhr.status <300){
+							resolve(xhr.responseText)
+						}else{
+							reject(new Error('失败状态码' + xhr.status))
+						}
+					}
+				})
+			}
+		</script>
+	</body>
+</html>

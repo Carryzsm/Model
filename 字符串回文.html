@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>字符串回文</title>
+	</head>
+	<body>
+		<script>
+			let str1 = 'asdfghhjkl'
+			
+			//字符串回文：当前字符串和倒叙后的字符串是否相同
+			
+			// function reverseString(str) {
+			// 	return str.split('').reverse().join('')
+			// }
+			// console.log(reverseString(str1));
+			
+			// function reverseif (str){
+			// 	return str === reverseString(str)
+			// }
+			// console.log(reverseif(str1));
+			
+			
+		  //方法二：
+		  function reverseif2(str){
+			  let strNew = str.split('').reverse().join('')
+			  return str === strNew
+		  }
+		  console.log(reverseif2(str1));
+		</script>
+	</body>
+</html>

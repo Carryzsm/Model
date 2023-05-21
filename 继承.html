@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // function Person(name){
+        //     this.name = name
+        // }
+        // function Child(name){
+        //     this.name = name
+        // }
+        // Child.prototype = new Person()
+        // Child.constuctor = Child
+        // Person.prototype.info = function(){
+        //     console.log(this.name + ': 唱跳rap篮球');
+        // }
+        // let person1 = new Person('王总')
+        // let  person2 = new Person('wangzong') 
+        // let child1 = new Child('xuesheng1')
+        // person1.info()
+        // person2.info()
+        // child1.info()
+
+        class Person{
+            constructor(name){
+               this.name = name
+            }
+            info(){
+                console.log(this.name + ': 唱跳rap篮球');
+            }
+        }
+        
+        class Child extends Person{
+            constructor(name,langure){
+                super(name)
+                this.langure = langure
+            }
+            speak(){
+                console.log(this.name + 'speak' + this.langure);
+            }
+        }
+
+        const person1 = new Person('zhangsan')
+        person1.info()
+        const child1 = new Child('zhaosi','Eng')
+        child1.info()
+        child1.speak()
+        console.log(Child.prototype);
+        console.log(Person.prototype);
+        console.log('---------------原型链终点---------------');
+        console.log(child1.__proto__.__proto__.__proto__.__proto__);
+        
+    </script>
+</body>
+</html>

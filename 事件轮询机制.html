@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* js所有任务都会在主线程进行，形成一个执行栈。在执行栈外有用于存放待执行的
+        异步回调的队列，队列分为宏队列和为队列，像Promise的回调、async & await属于微队列
+        ，像定时器、Ajax、Dom事件监听属于事件监听。他们的整体执行顺序是：先执行
+        js整体的同步代码，执行完后执行微任务，直到微队列中的微任务执行完开始执行
+        宏任务队列的宏任务，如果过宏任务中包含微任务，在执行该宏任务执行完微队列中的
+        任务后依次执行宏任务直到结束。
+        */
+
+       /*  console.log('start.......');
+
+        setTimeout(()=>{
+          console.log('宏任务-定时器1');
+        },1000)
+        setTimeout(()=>{
+          console.log('宏任务-定时器2');
+        },0)
+
+        new Promise((resolve)=>{
+            resolve()
+        })
+        .then(()=>{
+            console.log('微任务1');
+        },1000)
+        .then(()=>{
+            console.log('微任务1-1');
+        })
+        .then(()=>{
+            console.log('微任务1-2');
+        })
+        .catch(()=>{
+            console.log('微任务(LOSE)1-3');
+        })
+        .then(()=>{
+            console.log('微任务1-4');
+        })
+
+        new Promise((resolve)=>{
+            resolve()
+        })
+        .then(()=>{
+            console.log('微任务2');
+        },0)
+
+        console.log('end.........'); */
+        
+        // 3 2 4 1
+        // setTimeout(()=>{    console.log(1)  },0)
+        //  Promise.resolve().then(()=>{    console.log(2)  })
+        //  Promise.resolve().then(()=>{    console.log(4)  })
+        // console.log('3');
+
+        // new Promise((resolve,reject)=>{
+        //     if(a===1){
+        //         resolve('1')
+        //     }else{
+        //         reject('---')
+        //     }
+        // })
+        // .then((val,rej)=>{
+        //    console.log(val);
+        // })
+
+        // 2 5 3 4 1
+        // setTimeout(() => {    console.log(1)  }, 0) 
+        // new Promise((resolve)=>{
+        //     console.log(2);
+        //     resolve()
+        // })
+        // .then(()=>{
+        //     console.log(3);
+        // })
+        // .then(()=>{
+        //     console.log(4);
+        // })
+
+        // console.log(5);
+
+        //  3 4 
+        const first = () => (new Promise((resolve, reject) => {})
+    </script>
+</body>
+</html>

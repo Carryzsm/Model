@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			// 递归
+			let arr = [1,9,[2,3,4,[5,'q',[8,0]],4],'a']
+			let arr2 = [2,4,5,7,8]
+			
+			// let arrNew = []
+			// function flatten2(arr){
+				
+			//     arr.forEach(item=>{
+			// 		if(!Array.isArray(item)){
+			// 			arrNew.push(item)
+			// 		}else if(Array.isArray(item)){
+			// 			flatten2(item)
+			// 		}
+			// 	})
+			// 	return arrNew
+			// }
+			// console.log(flatten2(arr));
+			// --------------------------------------------------
+			
+			// while循环 + some + concat     
+			function flatten3(arr){
+				while(arr.some(item=> Array.isArray(item))){
+					arr = [].concat(...arr)
+				}
+				return arr
+			} 
+			console.log('flatten3方法',flatten3(arr));
+			
+            // 推导
+			// let arr5 = []
+			//  let arrl =  arr5.concat(...arr)
+			// console.log(arrl); 
+			//  let arrl1 = arr5.concat(...arrl)
+			//  console.log(arrl1);
+			//  let arrl2 = arr5.concat(...arrl1)
+			//  console.log(arrl2);
+		</script>
+	</body>
+</html>
