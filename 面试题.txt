@@ -222,9 +222,9 @@ onUpdated()
 onBeforeUnmount()
 onUnmounted()
 onErrorCaptured()
-
 onActivated()
 onDeactivated()
+
 onRenderTracked()
 onRenderTriggered()
 onServerPrefetch()
@@ -233,7 +233,7 @@ onServerPrefetch()
 vue中是有组件通信的，组件指的是具有特定功能特定效果功能的集合，包含html/css/js，组件其实也是对象，组件和组件的关系有：父子组件、兄弟关系、任意关系。组件通信指的是不同关系的组件进行数据的传递，常见的组件通信有：
 
 1）props：用来实现父子组件通信
-2）自定义事件：用来实现父子组件通信
+2）自定义事件：用来实现父子组件通信 
 3）事件总线：任意组件通信，原理是在vue的原型上绑定一个vue的实例，各个组件的实例对象与他是继承关系，一般不用。（原型对象上可以绑定一个$api存储所有的接口函数）
 4）插槽：分为普通、具名、作用域插槽，用来占位可以实现父子、子父组件通信。
 5）ref：用户来获取dom对象或者是组件对象，然后调用组件中属性或方法实现父子组件的通信。
