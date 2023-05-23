@@ -241,7 +241,7 @@ vue中是有组件通信的，组件指的是具有特定功能特定效果功�
 7）.sync:本质是updata事件+动态属性可以实现父子组件通信
 8）$attrs和$listeners：可以实现父子组件通信，在封装复用率比较高的组件中会用到，可以称之为高级复用组件。
 9）$parent和$children：可以实现父子组件的通信
-10）vuex：集中式状态管理数据，可以实现任意组件的通信，里面有五个对象（state：包含了多个状态数据的对象。mutations：包含了多个直接修改状态数据的方法的对象。actions：包含了多个间接修改数据的方法的对象。getters：包含了多个状态数据的计算属性的get方法的对象。modulesL:包含了多个子集模块的对象。数据修改方式为组件中分发action，action内部commit 给mutation，mutation内部修改数据，或者组件中直接commit对应的mutation，然后修改数据），总的action和子的action如果同名，先执行总的再执行子的。mutation中可以进行异步操作，但是不推荐。因为vue的调试工具中不能检测到更改的数据，导致页面不能及时更新。vuex中还有几个常用的辅助函数：mapState、mapMutation、mapActions、mapGetters。
+10）vuex：集中式状态管理数据，可以实现任意组件的通信，里面有五个对象（state：包含了多个状态数据的对象。mutations：包含了多个直接修改状态数据的方法的对象。actions：包含了多个间接修改数据的方法的对象。getters：包含了多个状态数据的计算属性的get方法的对象。modules:包含了多个子集模块的对象。数据修改方式为组件中分发action，action内部commit 给mutation，mutation内部修改数据，或者组件中直接commit对应的mutation，然后修改数据），总的action和子的action如果同名，先执行总的再执行子的。mutation中可以进行异步操作，但是不推荐。因为vue的调试工具中不能检测到更改的数据，导致页面不能及时更新。vuex中还有几个常用的辅助函数：mapState、mapMutations、mapActions、mapGetters。
 11）provide和inject：可以实现直接或间接父子组件通信
 12）pubsub：不属于任何框架，独立存在，可以实现任意组件或页面的通信。
 13）路由传参和本地缓存也可以实现任意组件的通信。
