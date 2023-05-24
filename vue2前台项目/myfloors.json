@@ -1,0 +1,35 @@
+[
+  {
+    "title": "家用电器",
+    "keys": [
+      {
+        "name": "热门",
+        "url": "www.baidu.com"
+      },
+      {
+        "name": "大家电",
+        "url": "www.baidu.com"
+      },
+      {
+        "name": "生活电器",
+        "url": "www.baidu.com"
+      }
+    ],
+    "keywords": [
+      {
+        "name": "节能补贴",
+        "url": "www.baidu.com"
+      },
+      {
+        "name": "4k电视",
+        "url": "www.baidu.com"
+      },
+      {
+        "name": "空气净化器",
+        "url": "www.baidu.com"
+      }
+    ],
+    "bgImage": "大图的地址",
+    "bannerImages": []
+  }
+]
