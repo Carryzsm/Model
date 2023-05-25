@@ -6,21 +6,21 @@
 	</head>
 	<body>
 		<script>
-			// function createObj(){
-			// 	var instance = null
-			// 	return function (name){
-			// 		if(!instance){
-			// 			instance = new Object()
-			// 			instance.name = name
-			// 		}
-			// 		return instance			
-			// 	}
-			// }
-			// var getObj = createObj()
-			// var obj1 = getObj('小明')
-			// var obj2 = getObj('小宏')
-			// console.log(obj1,obj2);
-			// console.log(obj1 === obj2);
+			function createObj(){
+				var instance = null
+				return function (name){
+					if(!instance){
+						instance = new Object()
+						instance.name = name
+					}
+					return instance			
+				}
+			}
+			var getObj = createObj()
+			var obj1 = getObj('小明')
+			var obj2 = getObj('小宏')
+			console.log(obj1,obj2);
+			console.log(obj1 === obj2);
 			
 			// function createObj(){
 			// 	var instance = null
@@ -37,21 +37,21 @@
 			// var obj2 = getObj('xiaohong')
 			// console.log(obj1,obj2);
 			
-			function createObj(){
-				var instance = null
-				return function(name){
-					if(!instance){
-						instance = new Object()
-						instance.name = name
-					}
-					return instance
-				}
-			}
-			var getObj = createObj()
-			var obj1 = getObj('zhansan')
-			var obj2 = getObj('xiaohong')
-			console.log(obj1,obj2);
-			console.log(obj1 === obj2);
+			// function createObj(){
+			// 	var instance = null
+			// 	return function(name){
+			// 		if(!instance){
+			// 			instance = new Object()
+			// 			instance.name = name
+			// 		}
+			// 		return instance
+			// 	}
+			// }
+			// var getObj = createObj()
+			// var obj1 = getObj('zhansan')
+			// var obj2 = getObj('xiaohong')
+			// console.log(obj1,obj2);
+			// console.log(obj1 === obj2);
 		</script>
 	</body>
 </html>
