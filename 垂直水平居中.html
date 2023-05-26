@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .bigbox{
+            position: relative;
+            width: 600px;
+            height: 600px;
+            background-color: aqua;
+            border: 1px solid black;
+        }
+        .box{
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            margin: auto;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: antiquewhite;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- 1.开启定位，四个方向设置0，margin：auto -->
+   <div class="bigbox">
+    <div class="box"></div>
+   </div>
+   <!-- 2.开启定位，top、left设置50%，然后设置magin-left和margin-top为自身宽度的一半并取负值 -->
+
+   <!-- 3.开启flex，设置justify-content为center，设置align-item为center -->
+</body>
+</html>
