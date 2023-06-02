@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>对象冻结</title>
+	</head>
+	<body>
+		<script>
+			// 浅冻结
+			let obj = {
+				id: 1,
+				name: 'asd',
+				text: 'aa1111111aaa'
+			}
+			Object.freeze(obj)
+			obj.id = 2
+			console.log(obj);
+			// 深冻结
+			let obj2 = {
+				id: 2,
+				name: '泰库辣',
+				text: 'wwww',
+				cln: {
+					id: 7,
+					name: 'cln',
+					text: 'qaz123456'
+				}
+			}
+			console.log('//////////////////////');
+			Object.freeze(obj2)
+			obj2.id = 100
+			obj2.cln.id = 250 //没有被冻结
+			console.log(obj2);
+			console.log('//////////////////////');
+            // console.log( Object.getOwnPropertyNames(obj2));
+			function deepFreeze(obj) {
+				Object.freeze(obj);
+				Object.getOwnPropertyNames(obj).forEach(function(prop) {
+					if (obj.hasOwnProperty(prop) &&
+						obj[prop] !== null &&
+						(typeof obj[prop] === "object" || typeof obj[prop] === "function") &&
+						!Object.isFrozen(obj[prop])) {
+						deepFreeze(obj[prop]);
+					}
+				});
+				return obj;
+			}
+		</script>
+	</body>
+</html>
