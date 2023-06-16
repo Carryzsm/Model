@@ -7,18 +7,9 @@
     <title>Document</title>
 </head>
 <body>
-    <script>
-       var w = 2
-        function f1(){
-            var a = 1
-            function f2(){
-                console.log(a,w);
-            }
-            return f2
-        }
-        var ff = f1()
-        ff()
-  
-    </script>
+    <div>123</div>
+    <?php
+    echo 'asd'
+    ?>
 </body>
 </html>

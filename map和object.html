@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+	   <script type="text/javascript">
+		   /* 
+		   1.object的键名只能是字符串或者symbol类型的，map键名可以是任意类型的；
+		   2.map可以避免键名冲突的问题，
+		   3.map对象的对于数据的存储量要比objcet大50%
+		   4.map对于数据的查找，删除，添加速度比objcet要快很多（数据多的情况下使用map）
+		   */
+		 let obj = {
+			 'www.baidu.com':'asd',
+			 'www.baidu.com':'1sd',
+			 'asd'
+		 }
+	   	 let p1 = new Map()
+		 p1.set('name','zhangsan')
+		 p1.set('lll')
+		 console.log(p1);
+		 
+		 console.log(obj);
+	   </script>
+	</body>
+</html>
