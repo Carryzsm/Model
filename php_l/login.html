@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</head>
+
+<body>
+    <h1>登录页面</h1>
+    <form id="loginForm">
+        <label for="username">用户名：</label>
+        <input type="text" id="username" name="username" required><br><br>
+        <label for="password">密码：</label>
+        <input type="password" id="password" name="password" required><br><br>
+        <input type="submit" value="登录">
+    </form>
+    <script>
+        // 监听表单提交事件
+        document.getElementById('loginForm').addEventListener('submit', function (event) {
+            event.preventDefault(); // 阻止表单默认提交行为
+
+            // 获取用户名和密码
+            var username = document.getElementById('username').value;
+            var password = document.getElementById('password').value;
+
+            // 发送登录请求
+            axios.post('login.php', { username: username, password: password })
+                .then(function (response) {
+                    // 登录成功
+                    if (response.data.status === 'success') {
+                        alert(response.data.message);
+                        // 进行其他操作，如跳转到其他页面
+                    }
+                    // 登录失败
+                    else {
+                        alert(response.data.message);
+                    }
+                })
+                .catch(function (error) {
+                    console.log(error);
+                });
+        });
+    </script>
+</body>
+
+</html>

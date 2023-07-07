@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.0.js"></script>
+		<script>
+			// $(document).ready(function(){
+			// 	alert('hello')
+			// })
+			function btnClick(){
+				let obj = $('#txt')[0]
+				obj.value = obj.value * obj.value
+				alert(obj.value)
+				let obj2 = $('.box')
+				console.log(obj2);
+				obj2.css('background-color','red')
+				console.log(obj2);
+				// 隐藏
+				$('#txt').hide()
+			} 
+		</script>
+		<style>
+			.box{
+				width: 100px;
+				height: 100px;
+			}
+		</style>
+	</head>
+	<body>
+		<input type="text" id="txt" placeholder="输入整数">
+		<input type="button" id="btn" value="计算平方" onClick='btnClick()'>
+		<div class="box">123</div>
+	</body>
+</html>
